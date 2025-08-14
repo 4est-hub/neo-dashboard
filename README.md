@@ -37,7 +37,7 @@ This project uses **React** with **TypeScript** for the frontend, **Fastify** fo
 
 ## ⚠️ REQUIRED! Environment Variables
 
-Fallback 'DEMO_KEY' is not working. You'll need to use your own nasa API key:
+Fallback 'DEMO_KEY' is not working. You'll need to create a .env file at the root and use your own NASA API Key.
 
 ```
 NASA_API_KEY=your_key
