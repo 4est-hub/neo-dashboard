@@ -37,16 +37,9 @@ This project uses **React** with **TypeScript** for the frontend, **Fastify** fo
 
 ## 🌍 (Optional) Environment Variables
 
-If you want to use your own NASA API key, create a `.env` file in the project root based on `.env.example`:
+If you want to use your own NASA API key, create a `.env` in root:
 
-```bash
-cp .env.example .env
 ```
-
-Then edit `.env`:
-
-```env
-# NASA API
 NASA_API_KEY=your_key
 ```
 
