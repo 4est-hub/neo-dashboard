@@ -35,9 +35,9 @@ This project uses **React** with **TypeScript** for the frontend, **Fastify** fo
 - Prettier default overrides:
   - Single quotes (`'`)
 
-## 🌍 (Optional) Environment Variables
+## 🌍 REQUIRED! Environment Variables
 
-If you want to use your own NASA API key, create a `.env` in root:
+Fallback 'DEMO_KEY' is not working. You'll need to use your own nasa API key:
 
 ```
 NASA_API_KEY=your_key
