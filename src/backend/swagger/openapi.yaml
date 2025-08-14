@@ -1,0 +1,90 @@
+openapi: 3.0.3
+info:
+  title: NASA Near-Earth Objects API
+  description: Fetches near-earth objects from NASA's API for a given date range.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000/api
+    description: Local development server
+
+paths:
+  /neos:
+    get:
+      summary: Get Near-Earth Objects
+      description: Retrieves a list of near-earth objects (NEOs) for a given date range.
+      operationId: getNeos
+      parameters:
+        - name: start_date
+          in: query
+          required: true
+          description: The start date for the NEO feed (YYYY-MM-DD)
+          schema:
+            type: string
+            format: date
+        - name: end_date
+          in: query
+          required: true
+          description: The end date for the NEO feed (YYYY-MM-DD)
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: A list of near-earth objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Neo'
+        '400':
+          description: Invalid query parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Neo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the NEO
+        name:
+          type: string
+          description: Name of the NEO
+        size:
+          type: string
+          description: Maximum estimated diameter in kilometers
+          example: "0.42"
+        closest_approach:
+          type: string
+          description: Distance of closest approach in kilometers
+          example: "123456.78"
+        velocity:
+          type: string
+          description: Relative velocity in kilometers per hour
+          example: "54321.12"
+      required:
+        - id
+        - name
+        - size
+        - closest_approach
+        - velocity
+
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+      required:
+        - message
