@@ -4,6 +4,16 @@ A small project that fetches and displays Near-Earth Objects (NEOs) from NASA's 
 
 ## 🚀 How to Run the Project
 
+## ⚠️ Requred! Environment Variables
+
+Fallback 'DEMO_KEY' is not working. You'll need to create a .env file at the root and use your own NASA API Key.
+
+```
+NASA_API_KEY=your_key
+```
+
+If no key is provided, the project will use NASA’s demo key, which has a limited request quota.
+
 1. **Install dependencies**  
    ```bash
    npm install
@@ -18,16 +28,6 @@ A small project that fetches and displays Near-Earth Objects (NEOs) from NASA's 
    ```bash
    npm run dev
    ```
-
-## ⚠️ REQUIRED! Environment Variables
-
-Fallback 'DEMO_KEY' is not working. You'll need to create a .env file at the root and use your own NASA API Key.
-
-```
-NASA_API_KEY=your_key
-```
-
-If no key is provided, the project will use NASA’s demo key, which has a limited request quota.
 
 ## ⚙️ Project Boilerplate
 
