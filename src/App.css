@@ -1,42 +1,137 @@
+:root {
+  --color-text: #1f2937;
+  --color-border: #cbd5e1;
+  --color-border-hover: #60a5fa;
+  --color-border-focus: #3b82f6;
+  --color-shadow-focus: rgba(59, 130, 246, 0.2);
+  --color-bg-header: #f3f4f6;
+  --color-bg-header-hover: #e0e7ff;
+  --color-border-header-hover: #6366f1;
+  --color-bg-item: #ffffff;
+  --color-bg-item-even: #f9fafb;
+  --color-bg-item-hover: #f0f9ff;
+}
+
+/* root */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* heading */
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* main layout */
+main {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 100px auto auto;
+  gap: 1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* list container */
+.list-container {
+  min-width: 750px;     
+  min-height: 100vh;     
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.card {
-  padding: 2em;
+/* date-picker */
+.date-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.date-picker label {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.date-picker input[type="date"] {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.date-picker input[type="date"]:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px var(--color-shadow-focus);
+}
+
+.date-picker input[type="date"]:hover {
+  border-color: var(--color-border-hover);
+}
+
+/* sortable list */
+.sortable-list {
+  width: 100%;
+}
+
+.sortable-list .header,
+.sortable-list .items li {
+  display: grid;
+  grid-template-columns: 200px repeat(3, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.sortable-list .header {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.sortable-list .header button {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--color-bg-header);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.sortable-list .header button:hover {
+  background-color: var(--color-bg-header-hover);
+  border-color: var(--color-border-header-hover);
+}
+
+.sortable-list .items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sortable-list .items li {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-item);
+  transition: all 0.2s ease;
+}
+
+.sortable-list .items li:nth-child(even) {
+  background-color: var(--color-bg-item-even);
+}
+
+.sortable-list .items li:hover {
+  background-color: var(--color-bg-item-hover);
 }

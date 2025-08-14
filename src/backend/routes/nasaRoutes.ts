@@ -23,10 +23,11 @@ async function nasaRoutes(
     Object.values(data.near_earth_objects).forEach((day: any) => {
       day.forEach((obj: any) => {
         neos.push({
+          id: obj.id,
           name: obj.name,
-          size: obj.estimated_diameter.kilometers.estimated_diameter_max,
-          closest_approach: obj.close_approach_data[0].miss_distance.kilometers,
-          velocity: obj.close_approach_data[0].relative_velocity.kilometers_per_hour,
+          size: obj.estimated_diameter.kilometers.estimated_diameter_max.toFixed(2),
+          closest_approach: parseFloat(obj.close_approach_data[0].miss_distance.kilometers).toFixed(2),
+          velocity: parseFloat(obj.close_approach_data[0].relative_velocity.kilometers_per_hour).toFixed(2),
         });
       });
     });
