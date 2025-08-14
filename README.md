@@ -6,13 +6,13 @@ A small project that fetches and displays Near-Earth Objects (NEOs) from NASA's 
 
 **⚠️ Requred! Environment Variables**
 
-Fallback 'DEMO_KEY' is not working. You'll need to create a .env file at the root and use your own NASA API Key.
+Fallback 'DEMO_KEY' is not working. You'll need to create a `.env` file at the root and use your own NASA API Key.
+
+You can generate one here: [api.nasa.gov](https://api.nasa.gov/)
 
 ```
 NASA_API_KEY=your_key
 ```
-
-If no key is provided, the project will use NASA’s demo key, which has a limited request quota.
 
 1. **Install dependencies**  
    ```bash
