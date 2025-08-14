@@ -29,10 +29,6 @@ If no key is provided, the project will use NASA’s demo key, which has a limit
    npm run dev
    ```
 
-## ⚙️ Project Boilerplate
-
-This project uses **React** with **TypeScript** for the frontend, **Fastify** for the backend server.
-
 ## 💡 Why These Choices?
 
 - **HTML date picker**: Using the native HTML date picker means no extra dependencies, faster loading, and following browser conventions.
