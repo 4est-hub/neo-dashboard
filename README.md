@@ -19,7 +19,17 @@ A small project that fetches and displays Near-Earth Objects (NEOs) from NASA's 
    npm run dev
    ```
 
-## ⚙️ Basic Setup
+## ⚠️ REQUIRED! Environment Variables
+
+Fallback 'DEMO_KEY' is not working. You'll need to create a .env file at the root and use your own NASA API Key.
+
+```
+NASA_API_KEY=your_key
+```
+
+If no key is provided, the project will use NASA’s demo key, which has a limited request quota.
+
+## ⚙️ Project Boilerplate
 
 This project uses **React** with **TypeScript** for the frontend, **Fastify** for the backend server.
 
@@ -34,16 +44,6 @@ This project uses **React** with **TypeScript** for the frontend, **Fastify** fo
 - ESLint is configured for **React**, **React Hooks**, and **TypeScript**.
 - Prettier default overrides:
   - Single quotes (`'`)
-
-## ⚠️ REQUIRED! Environment Variables
-
-Fallback 'DEMO_KEY' is not working. You'll need to create a .env file at the root and use your own NASA API Key.
-
-```
-NASA_API_KEY=your_key
-```
-
-If no key is provided, the project will use NASA’s demo key, which has a limited request quota.
 
 ## 📋 What I Didn’t Get To
 
