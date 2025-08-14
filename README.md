@@ -50,6 +50,7 @@ If no key is provided, the project will use NASA’s demo key, which has a limit
 - Fixing all linting errors
 - Adding server-side caching for NASA API requests
 - Move utils to utils folder
+- Improve server error handling, currently it always throws a 500 for any issue
 
 ## 📂 Project Structure
 
