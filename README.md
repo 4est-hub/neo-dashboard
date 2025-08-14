@@ -11,7 +11,7 @@ A small project that fetches and displays Near-Earth Objects (NEOs) from NASA's 
 
 2. **Start the Fastify server** (backend)  
    ```bash
-   npm run server
+   npm run dev:server
    ```
 
 3. **Start the React app** (frontend)  
