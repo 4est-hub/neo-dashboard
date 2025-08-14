@@ -38,12 +38,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Neo'
-        '400':
-          description: Invalid query parameters
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
         '500':
           description: Internal server error
           content:

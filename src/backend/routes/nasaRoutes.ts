@@ -19,6 +19,11 @@ async function nasaRoutes(
     const response = await fetch(url);
     const data: any = await response.json();
 
+    if (!data || !data.near_earth_objects) {
+      reply.status(500).send({ message: 'NASA API returned invalid data or rate limit exceeded' });
+      return;
+    }
+
     const neos: Neo[] = [];
     Object.values(data.near_earth_objects).forEach((day: any) => {
       day.forEach((obj: any) => {

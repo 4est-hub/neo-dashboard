@@ -8,7 +8,7 @@ dotenv.config();
 const server = Fastify({ logger: true });
 
 const NASA_API_KEY = process.env.NASA_API_KEY || 'DEMO_KEY';
-const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || '*';
+const FRONTEND_ORIGIN = '*';
 
 console.log('Using NASA API Key:', NASA_API_KEY);
 
