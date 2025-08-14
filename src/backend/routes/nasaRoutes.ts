@@ -13,7 +13,7 @@ async function nasaRoutes(
   server.get('/neos', async (request, reply) => {
     const { start_date, end_date } = request.query as { start_date: string; end_date: string };
     const apiKey = options.nasaApiKey;
-    const apiUrl = process.env.NASA_API_URL || 'https://api.nasa.gov/neo/rest/v1';
+    const apiUrl = 'https://api.nasa.gov/neo/rest/v1';
     const url = `${apiUrl}/feed?start_date=${start_date}&end_date=${end_date}&api_key=${apiKey}`;
 
     const response = await fetch(url);

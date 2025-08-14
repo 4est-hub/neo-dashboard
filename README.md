@@ -1,69 +1,73 @@
-# React + TypeScript + Vite
+# NASA Near-Earth Objects Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small project that fetches and displays Near-Earth Objects (NEOs) from NASA's public API. Built with **React**, **TypeScript**, and a **Fastify** server.
 
-Currently, two official plugins are available:
+## 🚀 How to Run the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Install dependencies**  
+   ```bash
+   npm install
+   ```
 
-## Expanding the ESLint configuration
+2. **Start the Fastify server** (backend)  
+   ```bash
+   npm run server
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. **Start the React app** (frontend)  
+   ```bash
+   npm run dev
+   ```
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ⚙️ Basic Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+This project uses **React** with **TypeScript** for the frontend, **Fastify** for the backend server.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+## 💡 Why These Choices?
+
+- **HTML date picker**: Using the native HTML date picker means no extra dependencies, faster loading, and following browser conventions.
+- **Minimal dependencies**: No need for libraries like Moment.js or Lodash for this scale of app. Sorting, date handling, and other features were implemented manually.
+- **Did Not Use CSS precompiler**: This is a smaller project, but would use SCSS or Tailwind for maintainability in larger projects.
+
+## 🛠 Linting & Formatting
+
+- ESLint is configured for **React**, **React Hooks**, and **TypeScript**.
+- Prettier default overrides:
+  - Single quotes (`'`)
+
+## 🌍 (Optional) Environment Variables
+
+If you want to use your own NASA API key, create a `.env` file in the project root based on `.env.example`:
+
+```bash
+cp .env.example .env
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Then edit `.env`:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+```env
+# NASA API
+NASA_API_KEY=your_key
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+If no key is provided, the project will use NASA’s demo key, which has a limited request quota.
+
+## 📋 What I Didn’t Get To
+
+- Fixing all linting errors
+- Adding server-side caching for NASA API requests
+
+## 📂 Project Structure
+
+```
+project-root/
+├── src/
+│   ├── server/     # Fastify backend
+│   ├── types/      # Shared TypeScript types
+│   ├── components/ # React UI components
+│   ├── App.tsx     # Main React app
+│   └── ...
+├── .env.example    # Example environment variables
+├── package.json
+└── README.md
 ```
